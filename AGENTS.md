@@ -16,3 +16,13 @@
 
 - Work in small, independently verifiable Plane issues.
 - Keep NexAgent local-first and security-conscious: do not expose secrets, leave the project root without authorization, or execute destructive commands without explicit approval.
+
+## Git and GitHub flow
+
+- Use GitHub for source control, code review, pull requests, and release history. Plane remains the sole source of truth for delivery status, and DocMost remains the sole source of truth for documentation.
+- Start each implementation change from a dedicated branch named `feature/<plane-issue>-<short-description>` unless the user specifies another branch or workflow.
+- Before staging or committing, inspect the working tree and stage only the intended changes. Never commit secrets, local environment files, credentials, generated caches, or unrelated user changes.
+- Verify the relevant tests, formatting, and lint checks before committing. Record the validation and changed files on the associated Plane issue.
+- Use clear, focused commit messages that reference the Plane issue, for example: `feat(tools): add project shell (NXG-6)`.
+- Create a GitHub pull request for completed implementation work. Link its Plane issue, summarize the scope and validation, and identify any follow-up work or documentation updates.
+- Do not force-push, rewrite shared history, merge pull requests, or push changes without the user's explicit authorization.
